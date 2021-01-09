@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "facturacion-frontend"
+  "defaultProject": "facturacion-frontend",
+  "cli": {
+    "analytics": false
+  }
 }
