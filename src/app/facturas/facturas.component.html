@@ -1,1 +1,51 @@
-<p>facturas works!</p>
+<div class="card bg-light">
+    <div class="card-header">{{titulo}} {{factura.descripcion}} </div>
+    <div class="card-body">
+        <h4 class="card-title">
+            <a class="btn btn-light btn-xs" [routerLink]="['/clientes/detalles', cliente.id]"> &laquo; volver</a>
+            <a class="btn btn-danger btn-xs float-right mx-2"> Exportar PDF</a>
+            <a class="btn btn-success btn-xs float-right"> Exportar EXCEL</a>
+        </h4>
+        <ul class="list-group my-2">
+            <li class="list-group-item list-group-item-primary">{{datosCliente}} </li>
+            <li class="list-group-item">{{cliente.nombre}}</li>
+            <li class="list-group-item">{{cliente.apellido}}</li>
+            <li class="list-group-item">{{cliente.email}}</li>
+        </ul>
+        <ul class="list-group my-2">
+            <li class="list-group-item list-group-item-success">{{datosFactura}} </li>
+            <li class="list-group-item">{{factura.id}}</li>
+            <li class="list-group-item">{{factura.descripcion}}</li>
+            <li class="list-group-item">{{factura.createAt}}</li>
+        </ul>
+
+        <table class="table table-striped table-hover table-bordered my-3">
+            <thead>
+                <tr>
+                    <th>Produco</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let linea of items">
+                    <td>{{linea.producto.nombre}}</td>
+                    <td>{{linea.producto.precio}}</td>
+                    <td>{{linea.cantidad}}</td>
+                    <td>{{linea.total}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h5 class="float-right">Gran Total <span class="badge badge-secondary">{{factura.total}}</span> </h5>
+        <div class="card border-info mb-4" style="max-width: 20rem;">
+            <div class="card-header">Observaciones</div>
+            <div class="card-body" *ngIf="factura?.observacion==null">
+                <h4 class="card-text">No tiene observaciones </h4>
+            </div>
+            <div class="card-body" *ngIf="factura?.observacion!=null">
+                <p>{{factura.observacion}}</p>
+            </div>
+        </div>
+    </div>
+</div>

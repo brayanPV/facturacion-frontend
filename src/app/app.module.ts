@@ -10,6 +10,8 @@ import { FormComponent } from './clientes/form.component';
 import { FormsModule } from '@angular/forms';
 import { DetallesComponent } from './clientes/detalles.component';
 import { FacturasComponent } from './facturas/facturas.component';
+import { ItemfacturasComponent } from './itemfacturas/itemfacturas.component';
+import { ProductosComponent } from './productos/productos.component';
 
 
 const routes: Routes = [
@@ -17,7 +19,8 @@ const routes: Routes = [
   {path: 'clientes', component:ClientesComponent},
   {path: 'clientes/form', component:FormComponent},
   {path: 'clientes/form/:id', component:FormComponent},
-  {path: 'clientes/detalles/:id', component:DetallesComponent}
+  {path: 'clientes/detalles/:id', component:DetallesComponent},
+  {path: 'facturas/ver/:id', component:FacturasComponent}
 ]
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ const routes: Routes = [
     ClientesComponent,
     FormComponent,
     DetallesComponent,
-    FacturasComponent
+    FacturasComponent,
+    ItemfacturasComponent,
+    ProductosComponent
   ],
   imports: [
     BrowserModule,

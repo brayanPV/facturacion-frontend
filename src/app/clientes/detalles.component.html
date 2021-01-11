@@ -18,6 +18,7 @@
                     <th scope="col">Folio</th>
                     <th scope="col">Descripcion</th>
                     <th scope="col">Obervacion</th>
+                    <th scope="col">Detalle</th>
                     <th scope="col">Fecha</th>
                     <th scope="col">Total</th>
                 </tr>
@@ -27,6 +28,7 @@
                     <th scope="row">{{factura.id}}</th>
                     <td>{{factura.descripcion}}</td>
                     <td>{{factura.observacion}}</td>
+                    <td><button class="btn btn-primary" [routerLink]="['/facturas/ver', factura.id]">Ver Detalle</button></td>
                     <td>{{factura.createAt}}</td>
                     <td>{{factura.total}}</td>
                 </tr>

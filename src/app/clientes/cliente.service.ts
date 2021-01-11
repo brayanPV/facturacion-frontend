@@ -16,7 +16,6 @@ export class ClienteService{
     constructor(private http: HttpClient, private router: Router){ }
 
     public getClientes(): Observable<Cliente[]>{
-        console.log("entra a service")
         return this.http.get<Cliente[]>(this.urlEndpoint);
     }
 
